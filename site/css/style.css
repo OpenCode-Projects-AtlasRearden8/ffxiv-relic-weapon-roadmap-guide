@@ -1,0 +1,159 @@
+/* FFXIV Relic Weapon Roadmap Guide — shared styles */
+
+:root {
+  --ink: #2b2440;
+  --paper: #fdf9f2;
+  --navy: #3a2f63;
+  --gold: #b08a3e;
+  --check: #3f7d54;
+  --soft: #ece5d8;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.65 "Georgia", "Iowan Old Style", "Palatino", serif;
+}
+
+.site-header {
+  background: var(--navy);
+  color: #f6f1e6;
+  padding: 1rem 1.25rem 0.9rem;
+}
+
+.site-header .brand a {
+  color: #f3d898;
+  font-size: 1.15rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.9rem;
+}
+
+.site-nav a {
+  color: #d9d2c4;
+  text-decoration: none;
+  font-size: 0.92rem;
+  padding: 0.15rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a.current,
+.site-nav a:hover {
+  color: #fff;
+  border-bottom-color: var(--gold);
+}
+
+main {
+  max-width: 780px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.25rem;
+}
+
+h1 { font-size: 1.9rem; line-height: 1.25; color: var(--navy); }
+h2 { font-size: 1.35rem; color: var(--navy); margin-top: 2rem; border-bottom: 1px solid var(--soft); padding-bottom: 0.25rem; }
+h3 { font-size: 1.05rem; color: #54467f; margin-top: 1.6rem; }
+
+a { color: #7a5bd6; }
+
+blockquote {
+  margin: 1rem 0;
+  padding: 0.6rem 1rem;
+  background: var(--soft);
+  border-left: 4px solid var(--gold);
+  font-style: italic;
+}
+
+code {
+  background: var(--soft);
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.tablewrap { overflow-x: auto; }
+
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+
+th, td { padding: 0.45rem 0.65rem; border-bottom: 1px solid var(--soft); text-align: left; vertical-align: top; }
+
+th { background: var(--navy); color: #f6f1e6; }
+
+tr:nth-child(even) td { background: rgba(236, 229, 216, 0.45); }
+
+ul, ol { padding-left: 1.4rem; }
+
+li { margin: 0.3rem 0; }
+
+ul.checklist {
+  list-style: none;
+  padding-left: 0.25rem;
+  background: var(--card);
+  border: 1px solid var(--soft);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 3px rgba(58, 47, 99, 0.08);
+}
+
+li.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed rgba(58, 47, 99, 0.12);
+}
+
+li.check-item:last-child { border-bottom: 0; }
+
+li.check-item input[type="checkbox"] {
+  margin-top: 0.35rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--check);
+  cursor: pointer;
+  flex: none;
+}
+
+li.check-item span { flex: 1 1 auto; }
+
+li.check-item input:checked + span {
+  color: #6b6480;
+  text-decoration: line-through;
+  text-decoration-color: rgba(63, 125, 84, 0.55);
+}
+
+.check-progress {
+  font-size: 0.9rem;
+  color: var(--check);
+  margin: 0.5rem 0 1rem;
+}
+
+.site-footer {
+  max-width: 780px;
+  margin: 0 auto 3rem;
+  padding: 0 1.25rem;
+  color: #7b7489;
+  font-size: 0.9rem;
+}
+
+.pn-row { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 1.2rem; }
+
+.pn { text-align: left; }
+.pn span { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #a09a8d; }
+.pn a { font-size: 1rem; }
+.pn.next { text-align: right; margin-left: auto; }
+.pn-hidden { visibility: hidden; }
+
+@media (max-width: 640px) {
+  h1 { font-size: 1.5rem; }
+  .site-nav { gap: 0.1rem 0.7rem; }
+}
